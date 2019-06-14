@@ -1,0 +1,21 @@
+Setelah membuat project dan folder, kita akan menjalankan perintah "npm start"
+- namun ada kalanya malah error, 
+beberapa artikel dan diskusi group yang saya baca mengharuskan menghapus beberapa folder dan file, 
+probably for several people with doing that has work, but for me there are several step to do
+
+here are the script i got to solve this problem :
+
+StackOverflow :
+just had the same problem. For some reason the package ended up in a node_modules directory in my home directory. It also gave me the exact same error for the jest package.
+
+I'm not sure of the correct way to fix this as npm uninstall -g babel-jest and yarn global remove babel-jest do not do anything.
+
+I fixed it by just blowing away the folders that cause the problem: bash
+rm -rf ~/node_modules/babel-jest ~/node_modules/jest
+
+It would be great to know how those packages ended up there, and the proper way of getting rid of them, but for now just deleting the folders is enough to get CRA dev server running without skipping the preflight check.
+
+
+
+Link :
+https://stackoverflow.com/questions/53089122/issue-with-babel-jest-dependency-when-running-npm-start-in-a-react-app?newreg=e7090c1a009f4840a8b60269655f9dc6
